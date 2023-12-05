@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--  main-fragment (title, otherStaticResources, header, nav, mainContent, footer)  -->
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{main :: main-fragment(
+                                                ~{::title},
+                                                ~{:: #user-leaderboard-static-resources},
+                                                ~{:: #user-leaderboard-header},
+                                                ~{:: #user-leaderboard-nav},
+                                                ~{:: #user-leaderboard-main-content},
+                                                ~{:: #user-leaderboard-footer}
+                                               )}">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>USER OVERVIEW</title>
+</head>
+<body>
+<div id="user-leaderboard-header">
+    <div th:replace="~{layout/navbar}"></div>
+</div>
+<div id="user-leaderboard-nav" >
+    <div th:replace="~{layout/sidebar-left}"></div>
+</div>
+<div id="user-leaderboard-main-content">
+    <div th:replace="~{user/content-leaderboard}"></div>
+</div>
+<div id="user-leaderboard-footer">
+    <div th:replace="~{layout/footer}"></div>=-
+</div>
+</body>
+</html>
